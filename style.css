@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: 15px;
+}
+.prof-img {
+  position: relative;
+  top: 300;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+}
+.card:hover {
+  cursor: pointer;
+  > .prof-img {
+    top: 100;
+  }
+}
