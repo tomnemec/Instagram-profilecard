@@ -1,21 +1,49 @@
 body {
   margin: 0;
   height: 100vh;
-  background: beige;
+  background: black;
+  flex-direction: column;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+.center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.icons {
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px;
+}
+.icon {
+  font-size: 1.7rem;
+}
+.icon:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  color: rgba(170, 35, 35, 0.8);
+}
 .card {
   width: 400px;
-  height: 400px;
+  height: 300px;
   background: white;
   border-radius: 15px;
+  flex-direction: column;
+
+  > .prof-img {
+    > .hide {
+      display: none;
+    }
+  }
 }
 .prof-img {
   position: relative;
-  top: 300;
+  top: -50;
   width: 200px;
   height: 200px;
   border-radius: 100%;
@@ -26,8 +54,42 @@ body {
   }
 }
 .card:hover {
+  transition: 0.5s ease-in-out;
+  height: 600px;
   cursor: pointer;
   > .prof-img {
-    top: 100;
+    top: -300;
+    transition: 0.5s ease-in-out;
+  }
+  > .prof-img {
+    > .hide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: forwards fadein 1.5s ease-in-out;
+    }
+  }
+}
+.more {
+  padding: 10px;
+  background: rgb(221, 93, 93);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 100px;
+}
+.more:hover {
+  cursor: pointer;
+  background: rgba(170, 35, 35, 0.8);
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
